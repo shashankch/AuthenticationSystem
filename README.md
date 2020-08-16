@@ -50,11 +50,17 @@ It allows users to quickly integrate authentication system in their application.
 
 2. cd AuthenticationSystem
 
-3. npm install
+3. Add generated Google ClienID and Client Secret Key in /config/passport-google-oauth2-strategy.js.
 
-4. Install MongoDB,Redis and run
+4. Add your emailId and password in /config/nodemailer.js
 
-5. npm start
+5. Step 3 and 4 not advisable in production mode. Please follow necessary steps for it.
+
+6. npm install
+
+7. Install MongoDB,Redis and run
+
+8. npm start
 
 ```
 
