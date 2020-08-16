@@ -1,39 +1,43 @@
 # AuthenticationSystem
 
-A Complete Authentication System using Node.Js,Express,Passport(Local and Google OAuth2 Strategy),EJS,MongoDB,Redis(queue),Kue(parallel job),Nodemailer(send mail) and Flash,Noty(display messages).
+A Complete Authentication System using Node.Js, Express, Passport (Local and Google OAuth2 Strategy) , EJS,MongoDB, Redis (queue), Kue (parallel job), Nodemailer (send mail) and Flash,Noty (display messages).
+
+It allows users to quickly integrate authentication system in their application.
 
 ## Functionalities:
 
 #### Sign In Page:
 
-- Add habits with short description.
-- display all added habits with related Info.
-- displays count of particular habit followed in a week.
-- delete particular habit.
+- Allows user to log in with registered email and password.
+- Forgot Password Option ( to get reset password link on registered user emailID).
+- Social Authentication (Option to Login using Google user account).
+- Creates user on valid google sign in if not already registered.
+- Displays all necessary notifications to user.
 
 #### Sign Up Page:
 
-- display all habits added along with date and month.
-- display status of each habits:"None","Not Done","Done" for previous 6 days.
-- update status of habits for previous 6 days.
+- Allows user to register using name,emailID and password.
+- Allows user to sign up using verified google account.
+- Displays all necessary notifications to user.
 
 #### Forgot Password Page:
 
-- display all habits added along with date and month.
-- display status of each habits:"None","Not Done","Done" for previous 6 days.
-- update status of habits for previous 6 days.
+- Allows user to send reset Password Link to valid registered emailID
+- Generates OneTime-use accessToken for the registered emailID requested for password Reset and send link to user's mail. 
+- Displays all necessary notifications to user.
 
 #### Profile update Page:
 
-- display all habits added along with date and month.
-- display status of each habits:"None","Not Done","Done" for previous 6 days.
-- update status of habits for previous 6 days.
+- displays Info like username,emailID,password to loggedIn user
+- Option to reset password and username.
+- Displays all necessary notifications to user on password mismatch,wrong entries etc.
 
 #### Reset Password Page:
 
-- display all habits added along with date and month.
-- display status of each habits:"None","Not Done","Done" for previous 6 days.
-- update status of habits for previous 6 days.
+- Accessible using password Reset Link sent to registered emailID.
+- Allows user to enter new password to update
+- Verifies user using accessToken generated.
+- Displays all necessary notifications to user on password mismatch,wrong entries etc.
 
 #### Home Page:
 
@@ -45,19 +49,21 @@ A Complete Authentication System using Node.Js,Express,Passport(Local and Google
 ## Steps to run locally:
 
 ```
-1. git clone https://github.com/shashankch/HabiDaily.git
+1. git clone https://github.com/shashankch/AuthenticationSystem.git
 
-2. cd HabiDaily
+2. cd AuthenticationSystem
 
 3. npm install
 
-4. Install MongoDB and run
+4. Install MongoDB,Redis and run
 
 5. npm start
 
 ```
 
-#### Your application should now be running on [localhost:8000](https://github.com/shashankch).
+#### Your application should now be running on [localhost:8000](https://github.com/shashankch/AuthenticationSystem).
+
+#### To check Kue-Dashboard to check parallel jobs running on [localhost:3000](https://github.com/shashankch/AuthenticationSystem). Type on CLI: ./node_modules/kue/bin/kue-dashboard
 
 
 ## Project Structure:
@@ -117,6 +123,10 @@ A Complete Authentication System using Node.Js,Express,Passport(Local and Google
     └── reset_password_worker.js
 
 ```
+## Next Steps:
 
+- add google RecaptchaV3 in my Authentication System.
 
+## Contributing:
 
+- All contributions are welcome!
