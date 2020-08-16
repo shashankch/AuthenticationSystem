@@ -1,0 +1,57 @@
+<!-- including styles for navbar links -->
+<link rel="stylesheet" href="/css/header.css" />
+<!-- header container -->
+<header>
+  <!-- navbar container starts here -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Auth</a>
+    <!-- collapsible button on change in screen size -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+      </ul>
+      <!-- list to sign up,sign in,sign out and reset password link -->
+      <ul id="sign-list">
+        <% if(locals.user) { %>
+
+        <li>
+          <%=user.name %>
+        </li>
+        <li>
+          <a href="/users/profile/<%= user.id %>">Reset Password</a>
+        </li>
+        <li>
+          <a href="/users/sign-out">Sign Out</a>
+        </li>
+
+        <% }else{ %>
+
+        <li>
+          <a href="/users/sign-in">SignIn</a>
+        </li>
+
+        <li>
+          <a href="/users/sign-up">SignUp</a>
+        </li>
+
+        <% } %>
+      </ul>
+    </div>
+  </nav>
+</header>

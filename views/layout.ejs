@@ -1,0 +1,91 @@
+<!-- common ejs layout to add in all pages -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+    <!-- link bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!-- link font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <!-- link noty to display messages -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- link page styling -->
+    <link rel="stylesheet" href="/css/layout.css" />
+
+    <!-- extract all other page styling and adding here -->
+    <%- style%>
+  </head>
+  <body>
+    <!-- including header template -->
+    <%- include('_header'); %>
+
+    <!-- main container -->
+    <main id="layout-main">
+      <div class="container">
+        <!-- including other html page content on request -->
+        <%- body %>
+      </div>
+    </main>
+    <!-- including footer content -->
+    <%- include('_footer'); %>
+    <!-- including all scripts of other pages -->
+    <%- script%>
+
+    <!-- script to display flash messages(sucees/error) using noty  -->
+    <script>
+           <% if(flash.success && flash.success.length>0) { %>
+              new Noty({
+                  theme:'relax',
+                  text:"<%=flash.success %>",
+                  type:'success',
+                  layout:'topRight',
+                  timeout:1500
+              }).show();
+      <% } %>
+
+       <% if(flash.error && flash.error.length>0) { %>
+              new Noty({
+                  theme:'relax',
+                  text:"<%=flash.error %>",
+                  type:'error',
+                  layout:'topRight',
+                  timeout:1500
+              }).show();
+      <% } %>
+    </script>
+
+    <!-- scripts for bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

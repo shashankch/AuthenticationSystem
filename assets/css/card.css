@@ -1,0 +1,14 @@
+/* styling for sign in/up cards container */
+.card-text{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ #button-div{
+
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}

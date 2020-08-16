@@ -1,0 +1,15 @@
+/* styling for navbar links */
+#sign-list {
+  margin: 0;
+  padding: 0;
+}
+
+#sign-list li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 10px;
+  color: white;
+}
+#sign-list li a {
+  color: white;
+}

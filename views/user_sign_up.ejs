@@ -1,0 +1,52 @@
+<!-- include card styling -->
+<link rel="stylesheet" href="/css/card.css">
+<!-- card container starrts here -->
+<div class="card" style="width: 450px;">
+  <div class="card-body">
+    <h5 class="card-title">Sign up</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Create your Account</h6>
+    <p class="card-text">
+        <!-- form data to send data to create user if not present in db -->
+    <form action="/users/create" method="POST">
+
+
+       <div class="form-group">
+        <label for="exampleInputName">Name</label>
+        <input type="text" class="form-control" name="name" aria-describedby="emailHelp" id="exampleInputName"
+          placeholder="Your Name" required>
+        
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" id="exampleInputEmail1"
+          placeholder="Email" required>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="password" id="exampleInputPassword1"
+          required>
+
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2"> Confirm Password</label>
+
+        <input type="password" class="form-control" name="confirm_password" id="exampleInputPassword2"
+          placeholder="confirm Password" required />
+      </div>
+
+      <div id="button-div">
+        <button type="submit" class="btn  btn-info" value="Sign Up">Sign-up</button>
+      </div>
+      
+    </form>
+    </p>
+      <!-- google login link to authenticate using google oauth -->
+    <p class="card-text">
+       <a id="google-link" class="card-link" href="/users/auth/google"><i class="fab fa-google"></i> Sign-up</a>
+    </p>
+   
+  </div>
+</div>

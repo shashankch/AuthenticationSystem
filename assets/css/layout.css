@@ -1,0 +1,11 @@
+/* styling for main common content */
+.container {
+  display: flex;
+  margin-top: 150px;
+  align-items: center;
+  justify-content: center;
+}
+
+#google-link {
+  color: red;
+}
