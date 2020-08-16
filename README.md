@@ -23,7 +23,7 @@ It allows users to quickly integrate authentication system in their application.
 #### Forgot Password Page:
 
 - Allows user to send reset Password Link to valid registered emailID
-- Generates OneTime-use accessToken for the registered emailID requested for password Reset and send link to user's mail. 
+- Generates OneTime-use accessToken for the registered emailID requested for password Reset and send link to user's mail.
 - Displays all necessary notifications to user.
 
 #### Profile update Page:
@@ -41,10 +41,7 @@ It allows users to quickly integrate authentication system in their application.
 
 #### Home Page:
 
-- display all habits added along with date and month.
-- display status of each habits:"None","Not Done","Done" for previous 6 days.
-- update status of habits for previous 6 days.
-
+- displays Home Page to only Logged In User.
 
 ## Steps to run locally:
 
@@ -64,7 +61,6 @@ It allows users to quickly integrate authentication system in their application.
 #### Your application should now be running on [localhost:8000](https://github.com/shashankch/AuthenticationSystem).
 
 #### To check Kue-Dashboard to check parallel jobs running on [localhost:3000](https://github.com/shashankch/AuthenticationSystem). Type on CLI: ./node_modules/kue/bin/kue-dashboard
-
 
 ## Project Structure:
 
@@ -123,6 +119,7 @@ It allows users to quickly integrate authentication system in their application.
     └── reset_password_worker.js
 
 ```
+
 ## Next Steps:
 
 - add google RecaptchaV3 in my Authentication System.
